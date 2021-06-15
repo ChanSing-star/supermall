@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <main-tab-bar></main-tab-bar>
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
+    <main-tab-bar id="mainTabBar"></main-tab-bar>
   </div>
 </template>
 
@@ -17,5 +19,8 @@ export default {
 </script>
 
 <style>
-  @import 'assets/css/base.css';
+@import 'assets/css/base.css';
+#mainTabBar {
+  background-color: red;
+}
 </style>

@@ -22,19 +22,20 @@ export default {
       // isActive: false
     }
   },
-  computed:{
-    isActive(){
+  computed: {
+    isActive() {
       // /home -> item1(/home) = true
       return this.$route.path.indexOf(this.path) != -1
     },
     activeStyle() {
-      return this.isActive ? {color: this.activeColor} : {}
+      return this.isActive ? { color: this.activeColor } : {}
     }
   },
   methods: {
     itemClick() {
-      this.$router.replace(this.path)
-      console.log(this.$route.path)
+      if (this.$route.path != this.path) {
+        this.$router.replace(this.path)
+      }
     }
   }
 }
